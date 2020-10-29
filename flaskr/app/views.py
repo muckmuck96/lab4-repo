@@ -26,7 +26,7 @@ def contact_form():
     if request.method == 'POST':
         email = request.form['email']
         cnt = request.form['content']
-        msg = Message('Hello', sender = 'candida72@ethereal.email', recipients = [email])
+        msg = Message('Hello', sender = email, recipients = ['candida72@ethereal.email'])
         msg.body = cnt
         mail.send(msg)
         return redirect(url_for('bio'))
